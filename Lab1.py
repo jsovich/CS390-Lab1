@@ -14,8 +14,8 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # ALGORITHM = "guesser"
-# ALGORITHM = "tf_net"
-ALGORITHM = "tf_conv"
+ALGORITHM = "tf_net"
+# ALGORITHM = "tf_conv"
 
 DATASET = "mnist_d"
 # DATASET = "mnist_f"
@@ -209,6 +209,13 @@ def main():
     plt.xticks(y_pos, data)
     plt.ylabel('% Accurate')
     plt.title('ANN_Accuracy_Plot')
+    plt.show()
+
+    cnn_acc = [99.39, 92.95, 76.82, 56.04, 41.30]
+    plt.bar(y_pos, cnn_acc, align='center', alpha=0.5)
+    plt.xticks(y_pos, data)
+    plt.ylabel('% Accurate')
+    plt.title('CNN_Accuracy_Plot')
     plt.show()
 
 
