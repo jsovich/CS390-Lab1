@@ -202,6 +202,14 @@ def main():
     preds = runModel(data[1][0], model)
     evalResults(data[1], preds)
 
+    data = ('mnist_d', 'mnist_f', 'cifar_10', 'cifar_100_c', 'cifar_100_f')
+    y_pos = np.arange(len(data))
+    ann_acc = [97.34, 86.09, 39.67, 24.57, 13.91]
+    plt.bar(y_pos, ann_acc, align='center', alpha=0.5)
+    plt.xticks(y_pos, data)
+    plt.ylabel('% Accurate')
+    plt.title('ANN_Accuracy_Plot')
+    plt.show()
 
 
 if __name__ == '__main__':
